@@ -1,0 +1,46 @@
+Nano — Turkish on-device narration voice (Piper "fahrettin", tr_TR, medium)
+============================================================================
+
+This folder ships a WebAssembly build of a text-to-phoneme component that
+statically links espeak-ng. This notice exists because that inclusion is
+required by espeak-ng's licence.
+
+1) espeak-ng — GNU General Public License v3.0 (or, at your option, any
+   later version)
+   Source code:    https://github.com/espeak-ng/espeak-ng
+   Full licence:   https://www.gnu.org/licenses/gpl-3.0.txt
+
+   espeak-ng is free software: you can redistribute it and/or modify it
+   under the terms of the GNU General Public License as published by the
+   Free Software Foundation, either version 3 of the License, or (at your
+   option) any later version. espeak-ng is distributed in the hope that it
+   will be useful, but WITHOUT ANY WARRANTY; without even the implied
+   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+2) piper-phonemize — MIT licence (wraps espeak-ng for phoneme extraction)
+   Source code:    https://github.com/rhasspy/piper-phonemize
+
+3) piper-wasm — MIT licence (compiles piper-phonemize + espeak-ng to
+   WebAssembly; the exact package/version used to produce
+   phonemizer.wasm + phonemizer.data in this folder)
+   Source code:    https://github.com/diffusion-studio/piper-wasm
+   Package/version: @diffusionstudio/piper-wasm@1.0.0
+   phonemizer.wasm / phonemizer.data are the UNMODIFIED
+   build/piper_phonemize.wasm and build/piper_phonemize.data files from
+   that package version (only renamed, no code changes).
+
+4) Piper (VITS text-to-speech) — MIT licence
+   Source code:    https://github.com/rhasspy/piper
+
+5) Voice model — "fahrettin" (tr_TR, medium)
+   model.onnx / model.onnx.json in this folder are copied unmodified
+   (md5 verified) from the community mirror
+   https://huggingface.co/diffusionstudio/piper-voices
+   (path: tr/tr_TR/fahrettin/medium/) of the original Piper voices
+   released by rhasspy/piper. Training data licence: CC0
+   (https://github.com/NabuCasa/voice-datasets).
+
+This notice is also published at:
+https://seyhancanyakan.github.io/nano-biba-app/v1/voice-tr/LICENSE-espeak-ng.txt
+and referenced from the app's licences page
+(licences.html / lisanslar.html).
